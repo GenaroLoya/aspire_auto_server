@@ -3,13 +3,23 @@ package server
 import "net/http"
 
 func initRoutes() {
-	http.HandleFunc("/", index)
+	// finalIndex := middleFirsLayer(middleReqLogger(func(w http.ResponseWriter, r *http.Request) {
+	// 	switch r.Method {
+	// 	case http.MethodGet:
+	// 		index(w, r)
+	// 	default:
+	// 		w.WriteHeader(http.StatusMethodNotAllowed)
+	// 	}
+	// }))
+
+	// http.HandleFunc("/", finalIndex)
+
 	http.HandleFunc("/countries", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case http.MethodGet:
-			getCountries(w, r)
-		case http.MethodPost:
-			postCountrie(w, r)
+			getAspireSteps(w, r)
+		// case http.MethodPost:
+		// 	postCountrie(w, r)
 		default:
 			w.WriteHeader(http.StatusMethodNotAllowed)
 		}
