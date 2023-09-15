@@ -1,0 +1,12 @@
+{
+  "name": "aspire.server",
+  "version": "1.0.0",
+  "description": "aspire.server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gow run main.go",
+    "start": "go run main.go"
+  },
+  "author": "",
+  "license": "ISC"
+}

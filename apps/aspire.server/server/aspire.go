@@ -13,6 +13,11 @@ type Instruct struct {
 	describAction EnumDescribAction
 }
 
+type Scene struct {
+	Table []EnumState `json:"table"`
+	Pos   int         `json:"pos"`
+}
+
 // State
 type EnumState int
 
@@ -72,7 +77,7 @@ var instructions = []Instruct{
 	{DIRTY, Clearfunc, CLEAR},
 }
 
-func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]EnumState, error) {
+func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]Scene, error) {
 	if len(table) == 0 {
 		return nil, errors.New("Empty table")
 	}
@@ -85,11 +90,14 @@ func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]EnumState, e
 	var prevPos int = pos - int(initDir)
 	movs := int(math.Abs(float64(initPos) - float64(initDir)*float64(len(table))))
 	beforePos := pos
+	var lista []Scene
+	lista = append(lista, Scene{table, pos})
 
 	for true {
 		var currentAction Instruct = resolveAction(table[pos], instructions)
 		beforePos = pos
 		currentAction.execAction(&pos, &table, prevPos)
+		lista = append(lista, Scene{table, pos})
 		time.Sleep(10000)
 		fmt.Println("TABLE", table)
 		if currentAction.describAction == MOVE {
@@ -102,7 +110,7 @@ func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]EnumState, e
 		}
 	}
 
-	return table, nil
+	return lista, nil
 }
 
 func resolveAction(state EnumState, instructions []Instruct) Instruct {
