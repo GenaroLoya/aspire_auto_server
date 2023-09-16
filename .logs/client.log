@@ -3,7 +3,35 @@
 > vite
 
 
-  VITE v4.4.9  ready in 654 ms
+  VITE v4.4.9  ready in 634 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
+3:05:12 PM [vite] Internal server error: Failed to resolve import "./App.css" from "src/App.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /home/genarold/Desktop/Class/IA/go/aspire_auto_server/apps/aspire.client/src/App.jsx:4:7
+  19 |  import reactLogo from "./assets/react.svg";
+  20 |  import viteLogo from "/vite.svg";
+  21 |  import "./App.css";
+     |          ^
+  22 |  function App() {
+  23 |    _s();
+      at formatError (file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:43993:46)
+      at TransformContext.error (file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:43989:19)
+      at normalizeUrl (file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:41801:33)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:41945:47
+      at async Promise.all (index 6)
+      at async TransformContext.transform (file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:41870:13)
+      at async Object.transform (file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:44283:30)
+      at async loadAndTransform (file:///home/genarold/Desktop/Class/IA/go/aspire_auto_server/node_modules/vite/dist/node/chunks/dep-df561101.js:54950:29)
+Failed to resolve import "./App.css" from "src/App.jsx". Does the file exist?
+3:06:56 PM [vite] page reload src/App.jsx
+3:07:07 PM [vite] page reload src/assets/react.svg
+3:11:20 PM [vite] vite.config.js changed, restarting server...
+failed to load config from /home/genarold/Desktop/Class/IA/go/aspire_auto_server/apps/aspire.client/vite.config.js
+3:11:20 PM [vite] Uno is not defined
+3:11:20 PM [vite] server restart failed
+3:11:42 PM [vite] vite.config.js changed, restarting server...
+3:11:43 PM [vite] server restarted.
+3:30:00 PM [vite] hmr update /src/App.jsx
