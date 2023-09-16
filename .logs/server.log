@@ -1,0 +1,50 @@
+[gow] unable to read terminal state: inappropriate ioctl for device
+Server running on:  :8080
+
+Server running on:  :8080
+
+Pos: 0
+Table: [1 0 0 1 1]
+Dir: 1
+Cleaning... Pos => 0
+TABLE [0 0 0 1 1]
+Moving to... 1
+TABLE [0 0 0 1 1]
+Moving to... 2
+TABLE [0 0 0 1 1]
+Moving to... 3
+TABLE [0 0 0 1 1]
+Cleaning... Pos => 3
+TABLE [0 0 0 0 1]
+Moving to... 4
+TABLE [0 0 0 0 1]
+Cleaning... Pos => 4
+TABLE [0 0 0 0 0]
+Moving to... 3
+TABLE [0 0 0 0 0]
+Moving to... 2
+TABLE [0 0 0 0 0]
+Response: {[{[0 0 0 0 0] 0} {[0 0 0 0 0] 0} {[0 0 0 0 0] 1} {[0 0 0 0 0] 2} {[0 0 0 0 0] 3} {[0 0 0 0 0] 3} {[0 0 0 0 0] 4} {[0 0 0 0 0] 4} {[0 0 0 0 0] 3} {[0 0 0 0 0] 2}]}
+Pos: 0
+Table: [1 0 0 1 1]
+Dir: 1
+Cleaning... Pos => 0
+TABLE [0 0 0 1 1]
+Moving to... 1
+TABLE [0 0 0 1 1]
+Moving to... 2
+TABLE [0 0 0 1 1]
+Moving to... 3
+TABLE [0 0 0 1 1]
+Cleaning... Pos => 3
+TABLE [0 0 0 0 1]
+Moving to... 4
+TABLE [0 0 0 0 1]
+Cleaning... Pos => 4
+TABLE [0 0 0 0 0]
+Moving to... 3
+TABLE [0 0 0 0 0]
+Moving to... 2
+TABLE [0 0 0 0 0]
+Response: {[{[0 0 0 0 0] 0} {[0 0 0 0 0] 0} {[0 0 0 0 0] 1} {[0 0 0 0 0] 2} {[0 0 0 0 0] 3} {[0 0 0 0 0] 3} {[0 0 0 0 0] 4} {[0 0 0 0 0] 4} {[0 0 0 0 0] 3} {[0 0 0 0 0] 2}]}
+signal: hangup
