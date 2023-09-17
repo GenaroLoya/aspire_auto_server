@@ -1,5 +1,6 @@
 import {
-  defineConfig, presetAttributify, presetIcons,
+  defineConfig,
+  presetIcons,
   presetTypography, presetUno, presetWebFonts,
   transformerDirectives, transformerVariantGroup
 } from 'unocss'
@@ -15,7 +16,7 @@ export default defineConfig({
   },
   presets: [
     presetUno(),
-    presetAttributify(),
+    // presetAttributify(),
     presetIcons(),
     presetTypography(),
     presetWebFonts(),

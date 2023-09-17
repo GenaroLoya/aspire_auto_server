@@ -3,7 +3,6 @@ package server
 import (
 	"errors"
 	"fmt"
-	"math"
 	"time"
 )
 
@@ -78,6 +77,8 @@ var instructions = []Instruct{
 }
 
 func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]Scene, error) {
+	fmt.Println("InitDir =>", initDir)
+	fmt.Println("InitPos =>", initPos)
 	if len(table) == 0 {
 		return nil, errors.New("Empty table")
 	}
@@ -88,18 +89,24 @@ func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]Scene, error
 
 	pos := initPos
 	var prevPos int = pos - int(initDir)
-	movs := int(math.Abs(float64(initPos) - float64(initDir)*float64(len(table))))
+	movs := len(table) * 2 //int(math.Abs(float64(initPos) - float64(initDir)*float64(len(table))))
+	fmt.Println("Movs =ffff>", movs)
 	beforePos := pos
 	var lista []Scene
-	lista = append(lista, Scene{table, pos})
+	tableCopy := make([]EnumState, len(table))
+	copy(tableCopy, table)
+	lista = append(lista, Scene{tableCopy, pos})
 
 	for true {
 		var currentAction Instruct = resolveAction(table[pos], instructions)
 		beforePos = pos
 		currentAction.execAction(&pos, &table, prevPos)
-		lista = append(lista, Scene{table, pos})
+
+		tableCopy := make([]EnumState, len(table))
+		copy(tableCopy, table)
+
+		lista = append(lista, Scene{tableCopy, pos})
 		time.Sleep(10000)
-		fmt.Println("TABLE", table)
 		if currentAction.describAction == MOVE {
 			prevPos = beforePos
 		}
@@ -109,6 +116,8 @@ func aspireLive(table []EnumState, initPos int, initDir EnumDir) ([]Scene, error
 			movs--
 		}
 	}
+
+	fmt.Println("Movs =ffff>", movs)
 
 	return lista, nil
 }
