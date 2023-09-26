@@ -133,11 +133,9 @@ Se define un ejemplo para el escenario de la aspiradora, que se conforma del mis
 ```
 table := []EnumState{DIRTY, CLEAN, DIRTY, DIRTY, DIRTY, DIRTY}
 ```
+### Ejecutar servidor de api
+`go run ./apps/aspire.server/main.go`
 
-### Testing
-Para hacer testing se ejecuta el comando:
-`go test` o `ginkgo`
-En el testing se incluyen varios casos posibles
-
-### Running font code
-Para ejecutar sin testing: `go run main.go`
+### Ejecutar servidor de cliente
+`cd ./apps/aspire.client`
+`npm run dev`
