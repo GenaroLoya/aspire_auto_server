@@ -59,7 +59,7 @@ function StepsViewer() {
             table={table}
             current={null}
           ></TableRender>
-          <div className="bg-blueGray-6 p-1 flex h-full items-center rounded-1 space-x-2">
+          <div className="relative bg-blueGray-6 p-1 flex h-20 items-center rounded-1 space-x-2 items-start">
             <button
               className="bg-green-500 h-9 w-9 hover:bg-green-700 text-white border-none py-1 px-2 rounded-1"
               onClick={() =>
@@ -115,18 +115,18 @@ function StepsViewer() {
                 className=""
               />
             </div>
+            <button
+              className="absolute left-1/2 vertical-50% top-17 bg-yellow-7 h-9 hover:bg-green-700 text-white border-none py-1 px-2 rounded-1"
+              onClick={() => {
+                const randomObject = generateRandomObject();
+                setTable(randomObject.table);
+                setPos(randomObject.pos);
+                setDir(randomObject.dir);
+              }}
+            >
+              Generate random
+            </button>
           </div>
-          <button
-            className="bg-green-500 h-9 hover:bg-green-700 text-white border-none py-1 px-2 rounded-1"
-            onClick={() => {
-              const randomObject = generateRandomObject();
-              setTable(randomObject.table);
-              setPos(randomObject.pos);
-              setDir(randomObject.dir);
-            }}
-          >
-            Generate random
-          </button>
         </div>
 
         <h1>Steps Viewer</h1>
